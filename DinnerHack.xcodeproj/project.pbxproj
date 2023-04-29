@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4344399329FCD2DE002F292F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344399229FCD2DE002F292F /* AppDelegate.swift */; };
 		4344399529FCD2DE002F292F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344399429FCD2DE002F292F /* SceneDelegate.swift */; };
-		4344399729FCD2DE002F292F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344399629FCD2DE002F292F /* HomeViewController.swift */; };
 		4344399A29FCD2DE002F292F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399829FCD2DE002F292F /* Main.storyboard */; };
 		4344399C29FCD2DF002F292F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4344399B29FCD2DF002F292F /* Assets.xcassets */; };
 		4344399F29FCD2DF002F292F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399D29FCD2DF002F292F /* LaunchScreen.storyboard */; };
@@ -45,13 +44,13 @@
 		85F2CA5529FD60540054E932 /* LeaveBookCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA5429FD60540054E932 /* LeaveBookCVC.swift */; };
 		85F2CA5729FD605B0054E932 /* CameBookCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA5629FD605B0054E932 /* CameBookCVC.swift */; };
 		85F2CA5929FD63430054E932 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA5829FD63430054E932 /* BookModel.swift */; };
+		85F2CA5B29FD84340054E932 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA5A29FD84340054E932 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4344398F29FCD2DE002F292F /* DinnerHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinnerHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4344399229FCD2DE002F292F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4344399429FCD2DE002F292F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4344399629FCD2DE002F292F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4344399929FCD2DE002F292F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4344399B29FCD2DF002F292F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4344399E29FCD2DF002F292F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		85F2CA5429FD60540054E932 /* LeaveBookCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveBookCVC.swift; sourceTree = "<group>"; };
 		85F2CA5629FD605B0054E932 /* CameBookCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameBookCVC.swift; sourceTree = "<group>"; };
 		85F2CA5829FD63430054E932 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		85F2CA5A29FD84340054E932 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +125,6 @@
 				85F2CA4B29FD5F8C0054E932 /* Home */,
 				4344399229FCD2DE002F292F /* AppDelegate.swift */,
 				4344399429FCD2DE002F292F /* SceneDelegate.swift */,
-				4344399629FCD2DE002F292F /* HomeViewController.swift */,
 				4361CEF929FD7C80001ECAF1 /* PostImageView.swift */,
 				437190B629FD6E6800C75649 /* DetailViewController.swift */,
 				437190AD29FD42D300C75649 /* Posting */,
@@ -192,9 +191,9 @@
 			children = (
 				85F2CA4E29FD60020054E932 /* FirstTab */,
 				85F2CA4F29FD600F0054E932 /* SecondTab */,
-				4344399629FCD2DE002F292F /* HomeViewController.swift */,
 				85F2CA4C29FD5FA90054E932 /* UnderlineSegmentedControl.swift */,
 				85F2CA5829FD63430054E932 /* BookModel.swift */,
+				85F2CA5A29FD84340054E932 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -305,7 +304,6 @@
 				85F2CA2129FCEF480054E932 /* NSObject+.swift in Sources */,
 				85F2CA4D29FD5FA90054E932 /* UnderlineSegmentedControl.swift in Sources */,
 				85F2CA2C29FCEF480054E932 /* UIColor+.swift in Sources */,
-				4344399729FCD2DE002F292F /* HomeViewController.swift in Sources */,
 				85F2CA5529FD60540054E932 /* LeaveBookCVC.swift in Sources */,
 				85F2CA5929FD63430054E932 /* BookModel.swift in Sources */,
 				85F2CA2429FCEF480054E932 /* String+.swift in Sources */,
@@ -322,6 +320,7 @@
 				85F2CA2D29FCEF480054E932 /* Adjusted+.swift in Sources */,
 				43FF916C29FD38C300FD9915 /* AutoLayout+.swift in Sources */,
 				437190B529FD42E200C75649 /* PostingWritingViewController.swift in Sources */,
+				85F2CA5B29FD84340054E932 /* HomeViewController.swift in Sources */,
 				85F2CA2A29FCEF480054E932 /* UICollectionVIew+.swift in Sources */,
 				85F2CA2829FCEF480054E932 /* UILabel+.swift in Sources */,
 				85F2CA2929FCEF480054E932 /* UIButton+.swift in Sources */,

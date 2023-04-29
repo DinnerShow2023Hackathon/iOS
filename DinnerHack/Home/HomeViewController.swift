@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  DinnerHack
 //
-//  Created by creohwan on 2023/04/29.
+//  Created by saint on 2023/04/30.
 //
 
 import UIKit
@@ -126,4 +126,3 @@ extension HomeViewController: UIPageViewControllerDataSource, UIPageViewControll
         self.segmentedControl.selectedSegmentIndex = index
     }
 }
-
