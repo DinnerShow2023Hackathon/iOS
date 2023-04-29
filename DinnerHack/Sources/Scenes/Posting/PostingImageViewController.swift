@@ -6,6 +6,7 @@
 //
 import UIKit
 import PhotosUI
+import SnapKit
 
 struct CellItem {
     var image: UIImage?
@@ -42,6 +43,10 @@ class PostingImageViewController: UIViewController {
         return $0
     }(UIImageView())
     
+    let closeBtn = UIButton().then{
+        $0.setImage(UIImage(named: "closeBtn"), for: .normal)
+    }
+    
     private let nextBTN: UIButton = {
         $0.backgroundColor = .brown1
         $0.isEnabled = false
@@ -57,13 +62,20 @@ class PostingImageViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .bg
         setupNavigationTitle()
+        pressBtn()
+        
+        self.view.addSubview(closeBtn)
+        closeBtn.snp.makeConstraints{
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(16)
+            $0.trailing.equalToSuperview().offset(-20)
+        }
         
         self.view.addSubview(titleText)
         titleText.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
-            paddingTop: 50,
+            paddingTop: 60,
             paddingLeft: 50,
             paddingRight: 50,
             height: 35
@@ -146,6 +158,12 @@ class PostingImageViewController: UIViewController {
             return newImage!
         }
         return image
+    }
+    
+    private func pressBtn(){
+        closeBtn.press {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
 }

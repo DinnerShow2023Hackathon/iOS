@@ -55,6 +55,10 @@ class DetailViewController: UIViewController {
         $0.autocapitalizationType = .none
         return $0
     }(UITextView())
+    
+    let closeBtn = UIButton().then{
+        $0.setImage(UIImage(named: "closeBtn"), for: .normal)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

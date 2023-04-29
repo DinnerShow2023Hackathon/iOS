@@ -17,13 +17,9 @@ class CameBookVC: UIViewController {
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
-        collectionView.isEditing = true
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.allowsFocusDuringEditing = true
-        collectionView.allowsMultipleSelection = true
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.contentInset.bottom = 60
+        collectionView.isUserInteractionEnabled = true
         return collectionView
     }()
     
@@ -107,6 +103,10 @@ extension CameBookVC: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return imageListLineSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(1)
     }
 }
 

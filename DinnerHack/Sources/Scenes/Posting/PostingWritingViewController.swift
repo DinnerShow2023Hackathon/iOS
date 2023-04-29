@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 import PhotosUI
 
 class PostingWritingViewController: UIViewController {
@@ -16,7 +17,7 @@ class PostingWritingViewController: UIViewController {
     // MARK: - View
 
     private var bookTitle: UILabel = {
-        $0.text = "책 제목 및 저자"
+        $0.text = "책 제목"
         $0.textAlignment = .left
         $0.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         $0.textColor = .black
@@ -93,6 +94,10 @@ class PostingWritingViewController: UIViewController {
         return $0
     }(UIButton())
     
+    let closeBtn = UIButton().then{
+        $0.setImage(UIImage(named: "closeBtn"), for: .normal)
+    }
+    
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
@@ -109,23 +114,14 @@ class PostingWritingViewController: UIViewController {
     }
     
     private func layout() {
-        self.view.addSubview(bookTitle)
-        self.view.addSubview(bookTitleField)
-        self.view.addSubview(bookTitleLine)
-        self.view.addSubview(textTitle)
-//        self.view.addSubview(exampleLabel)
-        self.view.addSubview(shadowView)
-        self.shadowView.addSubview(textContent)
-        self.view.addSubview(postBTN)
         
-        bookTitle.anchor(
-            top: view.safeAreaLayoutGuide.topAnchor,
-            left: view.safeAreaLayoutGuide.leftAnchor,
-            right: view.safeAreaLayoutGuide.rightAnchor,
-            paddingTop: 20,
-            paddingLeft: 16,
-            paddingRight: 16
-        )
+        self.view.addSubviews([bookTitle, bookTitleField, bookTitleLine, textTitle, shadowView, postBTN])
+        self.shadowView.addSubview(textContent)
+        
+        bookTitle.snp.makeConstraints{
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(20)
+            $0.leading.equalToSuperview().offset(20)
+        }
         
         bookTitleField.anchor(
             top: bookTitle.bottomAnchor,
