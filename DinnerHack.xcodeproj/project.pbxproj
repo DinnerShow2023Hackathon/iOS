@@ -13,14 +13,14 @@
 		4344399A29FCD2DE002F292F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399829FCD2DE002F292F /* Main.storyboard */; };
 		4344399C29FCD2DF002F292F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4344399B29FCD2DF002F292F /* Assets.xcassets */; };
 		4344399F29FCD2DF002F292F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399D29FCD2DF002F292F /* LaunchScreen.storyboard */; };
+		43FF916B29FD38C300FD9915 /* HideKeyboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF916929FD38C200FD9915 /* HideKeyboard+.swift */; };
+		43FF916C29FD38C300FD9915 /* AutoLayout+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF916A29FD38C300FD9915 /* AutoLayout+.swift */; };
 		85F2CA2029FCEF480054E932 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1229FCEF480054E932 /* CALayer+.swift */; };
 		85F2CA2129FCEF480054E932 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1329FCEF480054E932 /* NSObject+.swift */; };
 		85F2CA2229FCEF480054E932 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1429FCEF480054E932 /* UIFont+.swift */; };
 		85F2CA2329FCEF480054E932 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1529FCEF480054E932 /* UIView+.swift */; };
 		85F2CA2429FCEF480054E932 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1629FCEF480054E932 /* String+.swift */; };
 		85F2CA2529FCEF480054E932 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1729FCEF480054E932 /* UIStackView+.swift */; };
-		85F2CA2629FCEF480054E932 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1829FCEF480054E932 /* UIImageView+.swift */; };
-		85F2CA2729FCEF480054E932 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1929FCEF480054E932 /* UIViewController+.swift */; };
 		85F2CA2829FCEF480054E932 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1A29FCEF480054E932 /* UILabel+.swift */; };
 		85F2CA2929FCEF480054E932 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1B29FCEF480054E932 /* UIButton+.swift */; };
 		85F2CA2A29FCEF480054E932 /* UICollectionVIew+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1C29FCEF480054E932 /* UICollectionVIew+.swift */; };
@@ -41,14 +41,14 @@
 		4344399B29FCD2DF002F292F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4344399E29FCD2DF002F292F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		434439A029FCD2DF002F292F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43FF916929FD38C200FD9915 /* HideKeyboard+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HideKeyboard+.swift"; sourceTree = "<group>"; };
+		43FF916A29FD38C300FD9915 /* AutoLayout+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AutoLayout+.swift"; sourceTree = "<group>"; };
 		85F2CA1229FCEF480054E932 /* CALayer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		85F2CA1329FCEF480054E932 /* NSObject+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		85F2CA1429FCEF480054E932 /* UIFont+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		85F2CA1529FCEF480054E932 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		85F2CA1629FCEF480054E932 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		85F2CA1729FCEF480054E932 /* UIStackView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
-		85F2CA1829FCEF480054E932 /* UIImageView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
-		85F2CA1929FCEF480054E932 /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		85F2CA1A29FCEF480054E932 /* UILabel+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		85F2CA1B29FCEF480054E932 /* UIButton+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		85F2CA1C29FCEF480054E932 /* UICollectionVIew+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionVIew+.swift"; sourceTree = "<group>"; };
@@ -105,14 +105,14 @@
 		85F2CA1129FCEF480054E932 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				43FF916A29FD38C300FD9915 /* AutoLayout+.swift */,
+				43FF916929FD38C200FD9915 /* HideKeyboard+.swift */,
 				85F2CA1229FCEF480054E932 /* CALayer+.swift */,
 				85F2CA1329FCEF480054E932 /* NSObject+.swift */,
 				85F2CA1429FCEF480054E932 /* UIFont+.swift */,
 				85F2CA1529FCEF480054E932 /* UIView+.swift */,
 				85F2CA1629FCEF480054E932 /* String+.swift */,
 				85F2CA1729FCEF480054E932 /* UIStackView+.swift */,
-				85F2CA1829FCEF480054E932 /* UIImageView+.swift */,
-				85F2CA1929FCEF480054E932 /* UIViewController+.swift */,
 				85F2CA1A29FCEF480054E932 /* UILabel+.swift */,
 				85F2CA1B29FCEF480054E932 /* UIButton+.swift */,
 				85F2CA1C29FCEF480054E932 /* UICollectionVIew+.swift */,
@@ -208,17 +208,17 @@
 				85F2CA2C29FCEF480054E932 /* UIColor+.swift in Sources */,
 				4344399729FCD2DE002F292F /* ViewController.swift in Sources */,
 				85F2CA2429FCEF480054E932 /* String+.swift in Sources */,
+				43FF916B29FD38C300FD9915 /* HideKeyboard+.swift in Sources */,
 				85F2CA2329FCEF480054E932 /* UIView+.swift in Sources */,
-				85F2CA2629FCEF480054E932 /* UIImageView+.swift in Sources */,
 				85F2CA2029FCEF480054E932 /* CALayer+.swift in Sources */,
 				85F2CA2B29FCEF480054E932 /* UITextField+.swift in Sources */,
 				85F2CA2D29FCEF480054E932 /* Adjusted+.swift in Sources */,
+				43FF916C29FD38C300FD9915 /* AutoLayout+.swift in Sources */,
 				85F2CA2A29FCEF480054E932 /* UICollectionVIew+.swift in Sources */,
 				85F2CA2829FCEF480054E932 /* UILabel+.swift in Sources */,
 				85F2CA2929FCEF480054E932 /* UIButton+.swift in Sources */,
 				4344399329FCD2DE002F292F /* AppDelegate.swift in Sources */,
 				85F2CA2229FCEF480054E932 /* UIFont+.swift in Sources */,
-				85F2CA2729FCEF480054E932 /* UIViewController+.swift in Sources */,
 				85F2CA2529FCEF480054E932 /* UIStackView+.swift in Sources */,
 				4344399529FCD2DE002F292F /* SceneDelegate.swift in Sources */,
 			);
