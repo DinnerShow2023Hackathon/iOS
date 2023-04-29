@@ -10,6 +10,7 @@ import PhotosUI
 
 class PostingWritingViewController: UIViewController {
     
+    var postData: CellItem = CellItem()
     private var textViewPlaceHolder = "1. 이 책이 나에게 어떤 의미인지 \n2. 이 쪽을 선택한 이유 \n등 자유롭게 작성해주세요 :)"
     
     // MARK: - View
@@ -212,6 +213,8 @@ class PostingWritingViewController: UIViewController {
     }
     
     @objc func tapNextBTN() {
+        postData.book = bookTitleField.text
+        postData.text = textContent.text
         self.navigationController?.popToRootViewController(animated: true)
     }
    
