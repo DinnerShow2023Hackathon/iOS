@@ -30,7 +30,7 @@ class PostingImageViewController: UIViewController {
     }(UILabel())
     
     private let pinImage: UIImageView = {
-        $0.image = UIImage(named: "pinImage")
+        $0.image = UIImage(named: "pinImg")
         $0.contentMode = .scaleAspectFit
         $0.isUserInteractionEnabled = true
         return $0

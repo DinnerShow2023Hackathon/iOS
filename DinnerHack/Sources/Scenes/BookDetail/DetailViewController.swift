@@ -6,15 +6,17 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class DetailViewController: UIViewController {
     
-    var bookdata = BookModel(title: "1", contents: "2", image: "pinImage")
+    var bookdata = BookModel(title: "노인과 바다", contents: "행복합니다?", image: "book1")
     
     private var textViewPlaceHolder = "이 책 베리 굿"
     
     private let pinImage: UIImageView = {
-        $0.image = UIImage(named: "pinImage")
+        $0.image = UIImage(named: "pinImg")
         $0.contentMode = .scaleAspectFit
         $0.isUserInteractionEnabled = true
         return $0
@@ -22,21 +24,31 @@ class DetailViewController: UIViewController {
     
     private lazy var bookImage: UIImageView = {
         $0.image = UIImage(named:bookdata.image)
-        $0.contentMode = .scaleAspectFit
+        $0.contentMode = .scaleToFill
         $0.isUserInteractionEnabled = true
         return $0
     }(UIImageView())
     
+    private let userId = UILabel().then{
+        $0.text = "id: dinnerShow30"
+        $0.font = UIFont(name: "KimjungchulMyungjo-Bold", size: 16.0)
+    }
+    
+    private let userMessage = UILabel().then{
+        $0.text = "책의 다음 주인에게,"
+        $0.font = UIFont(name: "KimjungchulMyungjo-Regular", size: 16.0)
+    }
+    
     private lazy var bookTitle: UILabel = {
         $0.text = bookdata.title
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        $0.font = UIFont(name: "MapoFlowerIsland", size: 24.0)
         $0.textColor = .black
         return $0
     }(UILabel())
     
     private var shadowView: UIView = {
-        $0.backgroundColor = .white
+        $0.backgroundColor = .layerBrown
         $0.layer.cornerRadius = 10
         return $0
     }(UIView())
@@ -45,12 +57,12 @@ class DetailViewController: UIViewController {
         let linestyle = NSMutableParagraphStyle()
         linestyle.lineSpacing = 4.0
         $0.typingAttributes = [.paragraphStyle: linestyle]
-        $0.backgroundColor = .brown1
+        $0.backgroundColor = .layerBrown
         $0.text = bookdata.contents
         $0.textColor = .black
-        $0.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        $0.font = UIFont(name: "MapoFlowerIsland", size: 16.0)
         $0.textAlignment = .natural
-        $0.textContainerInset = UIEdgeInsets(top: 17, left: 12, bottom: 17, right: 12)
+        $0.textContainerInset = UIEdgeInsets(top: 14, left: 12, bottom: 14, right: 12)
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 10
         $0.autocorrectionType = .no
@@ -71,7 +83,7 @@ class DetailViewController: UIViewController {
         closeBtn.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
-            paddingTop: 20,
+            paddingTop: 14,
             paddingRight: 20,
             width: 24,
             height: 24
@@ -79,56 +91,61 @@ class DetailViewController: UIViewController {
         
         self.view.addSubview(pinImage)
         pinImage.anchor(
-            top: view.safeAreaLayoutGuide.topAnchor,
+            top: closeBtn.bottomAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
-            paddingTop: 50,
+//            paddingTop: 10,
             paddingLeft: 10,
             paddingRight: 10,
-            height: 400
+            height: 550
         )
         
-        self.pinImage.addSubview(bookImage)
-        bookImage.anchor(
-            top: pinImage.topAnchor,
-            left: pinImage.leftAnchor,
-            bottom: pinImage.bottomAnchor,
-            right: pinImage.rightAnchor,
-            paddingTop: 30,
-            paddingLeft: 40,
-            paddingBottom: 30,
-            paddingRight: 40
-        )
+        self.pinImage.addSubviews([bookImage, bookTitle])
+        bookImage.snp.makeConstraints{
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(30)
+            $0.width.equalTo(312)
+            $0.height.equalTo(416)
+        }
+        
+        bookTitle.snp.makeConstraints{
+            $0.bottom.equalToSuperview().offset(-30)
+            $0.trailing.equalToSuperview().offset(-30)
+        }
+        
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchToPickPhoto))
         bookImage.addGestureRecognizer(tapGesture)
         
-        self.view.addSubview(bookTitle)
+        view.addSubviews([userId, userMessage])
+        
+        userId.snp.makeConstraints{
+            $0.top.equalTo(pinImage.snp.bottom).offset(14)
+            $0.leading.equalToSuperview().offset(34.adjustedW)
+        }
+        
+        userMessage.snp.makeConstraints{
+            $0.top.equalTo(userId.snp.bottom).offset(12)
+            $0.leading.equalToSuperview().offset(34.adjustedW)
+        }
+        
         self.view.addSubview(shadowView)
         self.shadowView.addSubview(textContent)
         
-        bookTitle.anchor(
-            top: pinImage.bottomAnchor,
-            left: view.safeAreaLayoutGuide.leftAnchor,
-            right: view.safeAreaLayoutGuide.rightAnchor,
-            paddingTop: 20,
-            paddingLeft: 16,
-            paddingRight: 16
-        )
-        
         shadowView.anchor(
-            top: bookTitle.bottomAnchor,
+            top: userMessage.bottomAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
-            paddingTop: 10,
-            paddingLeft: 16,
-            paddingRight: 16,
-            height: 215
+            paddingTop: 6,
+            paddingLeft: 20,
+            paddingRight: 20,
+            height: 80
         )
 
         textContent.anchor(
             left: shadowView.leftAnchor,
             right: shadowView.rightAnchor,
-            height: 215
+            height: 80
         )
         
     }
