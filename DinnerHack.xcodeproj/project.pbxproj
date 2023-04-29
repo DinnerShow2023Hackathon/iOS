@@ -13,6 +13,8 @@
 		4344399A29FCD2DE002F292F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399829FCD2DE002F292F /* Main.storyboard */; };
 		4344399C29FCD2DF002F292F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4344399B29FCD2DF002F292F /* Assets.xcassets */; };
 		4344399F29FCD2DF002F292F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399D29FCD2DF002F292F /* LaunchScreen.storyboard */; };
+		4361CEFA29FD7C80001ECAF1 /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4361CEF929FD7C80001ECAF1 /* PostImageView.swift */; };
+		4361CEFC29FD80C5001ECAF1 /* UIBackBarButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4361CEFB29FD80C5001ECAF1 /* UIBackBarButton+.swift */; };
 		437190B429FD42E200C75649 /* PostingImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437190B229FD42E200C75649 /* PostingImageViewController.swift */; };
 		437190B529FD42E200C75649 /* PostingWritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437190B329FD42E200C75649 /* PostingWritingViewController.swift */; };
 		437190B729FD6E6800C75649 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437190B629FD6E6800C75649 /* DetailViewController.swift */; };
@@ -44,6 +46,8 @@
 		4344399B29FCD2DF002F292F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4344399E29FCD2DF002F292F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		434439A029FCD2DF002F292F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4361CEF929FD7C80001ECAF1 /* PostImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
+		4361CEFB29FD80C5001ECAF1 /* UIBackBarButton+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBackBarButton+.swift"; sourceTree = "<group>"; };
 		437190B229FD42E200C75649 /* PostingImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingImageViewController.swift; sourceTree = "<group>"; };
 		437190B329FD42E200C75649 /* PostingWritingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingWritingViewController.swift; sourceTree = "<group>"; };
 		437190B629FD6E6800C75649 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				4344399229FCD2DE002F292F /* AppDelegate.swift */,
 				4344399429FCD2DE002F292F /* SceneDelegate.swift */,
 				4344399629FCD2DE002F292F /* HomeViewController.swift */,
+				4361CEF929FD7C80001ECAF1 /* PostImageView.swift */,
 				437190B629FD6E6800C75649 /* DetailViewController.swift */,
 				437190AD29FD42D300C75649 /* Posting */,
 				4344399829FCD2DE002F292F /* Main.storyboard */,
@@ -127,6 +132,7 @@
 				85F2CA1229FCEF480054E932 /* CALayer+.swift */,
 				85F2CA1329FCEF480054E932 /* NSObject+.swift */,
 				85F2CA1429FCEF480054E932 /* UIFont+.swift */,
+				4361CEFB29FD80C5001ECAF1 /* UIBackBarButton+.swift */,
 				85F2CA1529FCEF480054E932 /* UIView+.swift */,
 				85F2CA1629FCEF480054E932 /* String+.swift */,
 				85F2CA1729FCEF480054E932 /* UIStackView+.swift */,
@@ -226,6 +232,8 @@
 				4344399729FCD2DE002F292F /* HomeViewController.swift in Sources */,
 				85F2CA2429FCEF480054E932 /* String+.swift in Sources */,
 				43FF916B29FD38C300FD9915 /* HideKeyboard+.swift in Sources */,
+				4361CEFA29FD7C80001ECAF1 /* PostImageView.swift in Sources */,
+				4361CEFC29FD80C5001ECAF1 /* UIBackBarButton+.swift in Sources */,
 				437190B429FD42E200C75649 /* PostingImageViewController.swift in Sources */,
 				85F2CA2329FCEF480054E932 /* UIView+.swift in Sources */,
 				437190B729FD6E6800C75649 /* DetailViewController.swift in Sources */,

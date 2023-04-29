@@ -56,6 +56,7 @@ class PostingImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .bg
+        setupNavigationTitle()
         
         self.view.addSubview(titleText)
         titleText.anchor(
@@ -98,6 +99,12 @@ class PostingImageViewController: UIViewController {
         )
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchToPickPhoto))
         bookImage.addGestureRecognizer(tapGesture)
+    }
+    
+    private func setupNavigationTitle() {
+        navigationItem.title = "책 걸이 만들기"
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     @objc func tapNextBTN() {
