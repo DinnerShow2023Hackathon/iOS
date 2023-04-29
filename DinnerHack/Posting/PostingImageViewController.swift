@@ -15,13 +15,20 @@ struct CellItem {
 class PostingImageViewController: UIViewController {
     
     private var titleText: UILabel = {
-        $0.text = "책 사진 올리세요"
+        $0.text = "인상깊었던 책 한 쪽을 올려주세요"
         $0.textAlignment = .center
         $0.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        $0.textColor = .lightGray
+        $0.textColor = .black
         $0.numberOfLines = 0
         return $0
     }(UILabel())
+    
+    private let pinImage: UIImageView = {
+        $0.image = UIImage(named: "pinImage")
+        $0.contentMode = .scaleAspectFit
+        $0.isUserInteractionEnabled = true
+        return $0
+    }(UIImageView())
     
     private let bookImage: UIImageView = {
         $0.image = UIImage(named: "Test04")
@@ -49,10 +56,10 @@ class PostingImageViewController: UIViewController {
             top: view.safeAreaLayoutGuide.topAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
-            paddingTop: 12,
+            paddingTop: 5,
             paddingLeft: 50,
             paddingRight: 50,
-            height: 50
+            height: 35
         )
         
         self.view.addSubview(nextBTN)
@@ -63,14 +70,25 @@ class PostingImageViewController: UIViewController {
             height: 90
         )
         
-        self.view.addSubview(bookImage)
-        bookImage.anchor(
+        self.view.addSubview(pinImage)
+        pinImage.anchor(
             top: titleText.bottomAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,
             bottom: nextBTN.topAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
-            paddingLeft: 30,
-            paddingRight: 30
+            paddingLeft: 10,
+            paddingRight: 10
+        )
+        
+        
+        self.view.addSubview(bookImage)
+        bookImage.anchor(
+            top: pinImage.topAnchor,
+            left: pinImage.leftAnchor,
+            bottom: pinImage.bottomAnchor,
+            right: pinImage.rightAnchor,
+            paddingLeft: 10,
+            paddingRight: 10
         )
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchToPickPhoto))
         bookImage.addGestureRecognizer(tapGesture)
