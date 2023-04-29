@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     private let nextBTN: UIButton = {
         $0.backgroundColor = .orange
@@ -39,8 +39,9 @@ class ViewController: UIViewController {
         let PostingViewController = PostingImageViewController()
         navigationController?.pushViewController(PostingViewController, animated: true)
     }
+}
 
-
-
+extension HomeViewController{
+    
 }
 
