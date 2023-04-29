@@ -12,13 +12,23 @@ import Moya
 
 class CameBookVC: UIViewController {
     
-    private lazy var bookListCV : UICollectionView  = {
+    static var bookList: [BookModel] = [
+        BookModel(title: "여행의 이유", contents: "꿀잼", image: "test04"),
+        BookModel(title: "책은 도끼다", contents: "책은 도끼다.", image: "book1"),
+        BookModel(title: "낯선 사람에게 말 걸기", contents: "여자 번호 땄어요.", image: "book2"),
+        BookModel(title: "전념", contents: "전념하자", image: "book3"),
+        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg")
+    ]
+    
+    lazy var bookListCV : UICollectionView  = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.contentInset.bottom = 60
         collectionView.isUserInteractionEnabled = true
         return collectionView
     }()
@@ -32,15 +42,6 @@ class CameBookVC: UIViewController {
     }
     
     let addBookVC = PostingImageViewController()
-    
-    var bookList: [BookModel] = [
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg")
-    ]
     
     // MARK: - Constants
     final let imageListLineSpacing: CGFloat = 32
@@ -88,7 +89,7 @@ extension CameBookVC{
 //            let navigationController = UINavigationController(rootViewController: PostingImageViewController())
 //            navigationController.modalPresentationStyle = .fullScreen
 //            present(navigationController, animated: true, completion: nil)
-            
+            bookListCV.reloadData()
             addBookVC.modalPresentationStyle = .overFullScreen
             present(addBookVC, animated: true, completion:nil)
         }
@@ -106,19 +107,23 @@ extension CameBookVC: UICollectionViewDelegateFlowLayout{
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(1)
+        let vc = DetailViewController()
+        vc.bookdata = CameBookVC.bookList[indexPath.row]
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion:nil)
     }
 }
 
 // MARK: - UICollectionViewDataSource
 extension CameBookVC : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bookList.count
+        return CameBookVC.bookList.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: CameBookCVC.className, for: indexPath) as? CameBookCVC else { return UICollectionViewCell() }
-        bookCell.dataBind(model: bookList[indexPath.row])
+        bookCell.dataBind(model: CameBookVC.bookList[indexPath.row])
         return bookCell
     }
+
 }
