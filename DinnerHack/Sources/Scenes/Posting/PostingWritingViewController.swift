@@ -215,7 +215,8 @@ class PostingWritingViewController: UIViewController {
     @objc func tapNextBTN() {
         postData.book = bookTitleField.text
         postData.text = textContent.text
-        self.navigationController?.popToRootViewController(animated: true)
+//        self.navigationController?.popToRootViewController(animated: true)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
    
 }

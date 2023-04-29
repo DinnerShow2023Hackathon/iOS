@@ -108,9 +108,14 @@ class PostingImageViewController: UIViewController {
     }
     
     @objc func tapNextBTN() {
-        let PostingViewController = PostingWritingViewController()
-        PostingViewController.postData = postData
-        navigationController?.pushViewController(PostingViewController, animated: true)
+        
+        let vc = PostingWritingViewController()
+        vc.postData = postData
+        
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion:nil)
+        
+//        navigationController?.pushViewController(PostingViewController, animated: true)
     }
     
     @objc func touchToPickPhoto() {

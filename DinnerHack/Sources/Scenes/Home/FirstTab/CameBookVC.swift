@@ -88,6 +88,11 @@ extension CameBookVC{
     
     func pressBtn(){
         addBookBtn.press { [self] in
+            
+//            let navigationController = UINavigationController(rootViewController: PostingImageViewController())
+//            navigationController.modalPresentationStyle = .fullScreen
+//            present(navigationController, animated: true, completion: nil)
+            
             addBookVC.modalPresentationStyle = .overFullScreen
             present(addBookVC, animated: true, completion:nil)
         }
