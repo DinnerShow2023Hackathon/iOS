@@ -13,8 +13,11 @@
 		4344399A29FCD2DE002F292F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399829FCD2DE002F292F /* Main.storyboard */; };
 		4344399C29FCD2DF002F292F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4344399B29FCD2DF002F292F /* Assets.xcassets */; };
 		4344399F29FCD2DF002F292F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399D29FCD2DF002F292F /* LaunchScreen.storyboard */; };
+		4361CEFA29FD7C80001ECAF1 /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4361CEF929FD7C80001ECAF1 /* PostImageView.swift */; };
+		4361CEFC29FD80C5001ECAF1 /* UIBackBarButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4361CEFB29FD80C5001ECAF1 /* UIBackBarButton+.swift */; };
 		437190B429FD42E200C75649 /* PostingImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437190B229FD42E200C75649 /* PostingImageViewController.swift */; };
 		437190B529FD42E200C75649 /* PostingWritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437190B329FD42E200C75649 /* PostingWritingViewController.swift */; };
+		437190B729FD6E6800C75649 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437190B629FD6E6800C75649 /* DetailViewController.swift */; };
 		43FF916B29FD38C300FD9915 /* HideKeyboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF916929FD38C200FD9915 /* HideKeyboard+.swift */; };
 		43FF916C29FD38C300FD9915 /* AutoLayout+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF916A29FD38C300FD9915 /* AutoLayout+.swift */; };
 		85F2CA2029FCEF480054E932 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1229FCEF480054E932 /* CALayer+.swift */; };
@@ -53,8 +56,11 @@
 		4344399B29FCD2DF002F292F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4344399E29FCD2DF002F292F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		434439A029FCD2DF002F292F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4361CEF929FD7C80001ECAF1 /* PostImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
+		4361CEFB29FD80C5001ECAF1 /* UIBackBarButton+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBackBarButton+.swift"; sourceTree = "<group>"; };
 		437190B229FD42E200C75649 /* PostingImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingImageViewController.swift; sourceTree = "<group>"; };
 		437190B329FD42E200C75649 /* PostingWritingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingWritingViewController.swift; sourceTree = "<group>"; };
+		437190B629FD6E6800C75649 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		43FF916929FD38C200FD9915 /* HideKeyboard+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HideKeyboard+.swift"; sourceTree = "<group>"; };
 		43FF916A29FD38C300FD9915 /* AutoLayout+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AutoLayout+.swift"; sourceTree = "<group>"; };
 		85F2CA1229FCEF480054E932 /* CALayer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
@@ -119,6 +125,9 @@
 				85F2CA4B29FD5F8C0054E932 /* Home */,
 				4344399229FCD2DE002F292F /* AppDelegate.swift */,
 				4344399429FCD2DE002F292F /* SceneDelegate.swift */,
+				4344399629FCD2DE002F292F /* HomeViewController.swift */,
+				4361CEF929FD7C80001ECAF1 /* PostImageView.swift */,
+				437190B629FD6E6800C75649 /* DetailViewController.swift */,
 				437190AD29FD42D300C75649 /* Posting */,
 				4344399829FCD2DE002F292F /* Main.storyboard */,
 				4344399B29FCD2DF002F292F /* Assets.xcassets */,
@@ -145,6 +154,7 @@
 				85F2CA1229FCEF480054E932 /* CALayer+.swift */,
 				85F2CA1329FCEF480054E932 /* NSObject+.swift */,
 				85F2CA1429FCEF480054E932 /* UIFont+.swift */,
+				4361CEFB29FD80C5001ECAF1 /* UIBackBarButton+.swift */,
 				85F2CA1529FCEF480054E932 /* UIView+.swift */,
 				85F2CA1629FCEF480054E932 /* String+.swift */,
 				85F2CA1729FCEF480054E932 /* UIStackView+.swift */,
@@ -301,9 +311,12 @@
 				85F2CA2429FCEF480054E932 /* String+.swift in Sources */,
 				85F2CA5129FD60360054E932 /* CameBookVC.swift in Sources */,
 				43FF916B29FD38C300FD9915 /* HideKeyboard+.swift in Sources */,
+				4361CEFA29FD7C80001ECAF1 /* PostImageView.swift in Sources */,
+				4361CEFC29FD80C5001ECAF1 /* UIBackBarButton+.swift in Sources */,
 				437190B429FD42E200C75649 /* PostingImageViewController.swift in Sources */,
 				85F2CA5729FD605B0054E932 /* CameBookCVC.swift in Sources */,
 				85F2CA2329FCEF480054E932 /* UIView+.swift in Sources */,
+				437190B729FD6E6800C75649 /* DetailViewController.swift in Sources */,
 				85F2CA2029FCEF480054E932 /* CALayer+.swift in Sources */,
 				85F2CA2B29FCEF480054E932 /* UITextField+.swift in Sources */,
 				85F2CA2D29FCEF480054E932 /* Adjusted+.swift in Sources */,
@@ -461,6 +474,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UDCS6NMGF8;
@@ -471,6 +485,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,6 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UDCS6NMGF8;
@@ -499,6 +515,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

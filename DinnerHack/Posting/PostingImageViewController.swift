@@ -10,9 +10,14 @@ import PhotosUI
 struct CellItem {
     var image: UIImage?
     var path: Data?
+    var text: String?
+    var book: String?
 }
 
 class PostingImageViewController: UIViewController {
+    
+    private var postData : CellItem = CellItem()
+    private var imageBool = false
     
     private var titleText: UILabel = {
         $0.text = "인상깊었던 책 한 쪽을 올려주세요"
@@ -38,7 +43,8 @@ class PostingImageViewController: UIViewController {
     }(UIImageView())
     
     private let nextBTN: UIButton = {
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = .brown1
+        $0.isEnabled = false
         $0.setTitle("다음", for: .normal)
         $0.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
@@ -49,7 +55,8 @@ class PostingImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .orange
+        view.backgroundColor = .bg
+        setupNavigationTitle()
         
         self.view.addSubview(titleText)
         titleText.anchor(
@@ -94,13 +101,19 @@ class PostingImageViewController: UIViewController {
         bookImage.addGestureRecognizer(tapGesture)
     }
     
+    private func setupNavigationTitle() {
+        navigationItem.title = "책 걸이 만들기"
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     @objc func tapNextBTN() {
         let PostingViewController = PostingWritingViewController()
+        PostingViewController.postData = postData
         navigationController?.pushViewController(PostingViewController, animated: true)
     }
     
     @objc func touchToPickPhoto() {
-        print("yes")
         uploadPhoto()
     }
     
@@ -113,6 +126,23 @@ class PostingImageViewController: UIViewController {
         picker.delegate = self
         self.present(picker, animated: true, completion: nil)
     }
+    
+    private func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        var scale = 0.0
+        var newHeight = 0.0
+
+        if newWidth < image.size.width {
+            scale = newWidth / image.size.width
+            newHeight = image.size.height * scale
+            UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
+            image.draw(in: CGRectMake(0, 0, newWidth, newHeight))
+            let newImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return newImage!
+        }
+        return image
+    }
+
 }
 
 extension PostingImageViewController: PHPickerViewControllerDelegate {
@@ -125,8 +155,11 @@ extension PostingImageViewController: PHPickerViewControllerDelegate {
                 itemProvider.loadObject(ofClass: UIImage.self) { [weak self](image, error) in
                     DispatchQueue.main.async {
                         guard let image = image as? UIImage else { return }
+                        self?.nextBTN.backgroundColor = .brown2
+                        self?.nextBTN.isEnabled = true
+                        self?.postData = CellItem(image: image,
+                                                  path: self!.resizeImage(image: image, newWidth: 800).jpegData(compressionQuality: 1.0))
                         self?.bookImage.image = image
-
                     }
                 }
             }

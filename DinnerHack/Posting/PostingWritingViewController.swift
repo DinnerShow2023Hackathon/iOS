@@ -10,39 +10,62 @@ import PhotosUI
 
 class PostingWritingViewController: UIViewController {
     
-    private var textViewPlaceHolder = "고객을 위해 쉽고 자세하게 설명해주세요."
+    var postData: CellItem = CellItem()
+    private var textViewPlaceHolder = "1. 이 책이 나에게 어떤 의미인지 \n2. 이 쪽을 선택한 이유 \n등 자유롭게 작성해주세요 :)"
     
     // MARK: - View
 
-    private var textTitle: UILabel = {
-        $0.text = "작업내용을 작성해주세요"
+    private var bookTitle: UILabel = {
+        $0.text = "책 제목 및 저자"
         $0.textAlignment = .left
         $0.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         $0.textColor = .black
         return $0
     }(UILabel())
     
-    private let exampleLabel: UILabel = {
-        $0.text = """
-                    예시)
-                    - 거실 바닥 장판 철거, PE폼 깔기
-                    - 강화마루 설치
-                    - 특이사항 없음
-                    - 작업인원 0명
-                    """
-        $0.numberOfLines = 0
-        $0.textColor = .gray
-        $0.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+    private lazy var bookTitleField: UITextField = {
+        $0.placeholder = " ex) 여행의 이유 (김영하)"
+        $0.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+//        $0.addTarget(self, action: #selector(buttonAttributeChanged), for: .editingChanged)
+        return $0
+    }(UITextField())
+    
+    private let bookTitleLine: UIView = {
+        $0.setHeight(height: 1)
+        $0.backgroundColor = .brown1
+        return $0
+    }(UIView())
+    
+    private var textTitle: UILabel = {
+        $0.text = "다음 책 주인이 될 분을 위한 한 마디"
+        $0.textAlignment = .left
+        $0.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        $0.textColor = .black
         return $0
     }(UILabel())
+
+    
+//    private let exampleLabel: UILabel = {
+//        $0.text = """
+//                    예시)
+//                    - 거실 바닥 장판 철거, PE폼 깔기
+//                    - 강화마루 설치
+//                    - 특이사항 없음
+//                    - 작업인원 0명
+//                    """
+//        $0.numberOfLines = 0
+//        $0.textColor = .gray
+//        $0.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+//        return $0
+//    }(UILabel())
 
     private lazy var textContent: UITextView = {
         let linestyle = NSMutableParagraphStyle()
         linestyle.lineSpacing = 4.0
         $0.typingAttributes = [.paragraphStyle: linestyle]
-        $0.backgroundColor = .clear
+        $0.backgroundColor = .brown1
         $0.text = textViewPlaceHolder
-        $0.textColor = .lightGray
+        $0.textColor = .gray
         $0.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         $0.textAlignment = .natural
         $0.textContainerInset = UIEdgeInsets(top: 17, left: 12, bottom: 17, right: 12)
@@ -61,8 +84,8 @@ class PostingWritingViewController: UIViewController {
     }(UIView())
 
     private let postBTN: UIButton = {
-        $0.backgroundColor = .orange
-        $0.setTitle("작성 완료", for: .normal)
+        $0.backgroundColor = .brown1
+        $0.setTitle("책 걸기", for: .normal)
         $0.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         $0.setTitleColor(.white, for: .normal)
@@ -81,18 +104,21 @@ class PostingWritingViewController: UIViewController {
     }
     
     private func attribute() {
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .bg
         setupNavigationTitle()
     }
     
     private func layout() {
+        self.view.addSubview(bookTitle)
+        self.view.addSubview(bookTitleField)
+        self.view.addSubview(bookTitleLine)
         self.view.addSubview(textTitle)
-        self.view.addSubview(exampleLabel)
+//        self.view.addSubview(exampleLabel)
         self.view.addSubview(shadowView)
         self.shadowView.addSubview(textContent)
         self.view.addSubview(postBTN)
-    
-        textTitle.anchor(
+        
+        bookTitle.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
@@ -101,29 +127,56 @@ class PostingWritingViewController: UIViewController {
             paddingRight: 16
         )
         
-        exampleLabel.anchor(
+        bookTitleField.anchor(
+            top: bookTitle.bottomAnchor,
+            left: view.safeAreaLayoutGuide.leftAnchor,
+            right: view.safeAreaLayoutGuide.rightAnchor,
+            paddingTop: 8,
+            paddingLeft: 16,
+            paddingRight: 16
+        )
+        
+        bookTitleLine.anchor(
+            top: bookTitle.bottomAnchor,
+            left: view.safeAreaLayoutGuide.leftAnchor,
+            right: view.safeAreaLayoutGuide.rightAnchor,
+            paddingTop: 30,
+            paddingLeft: 16,
+            paddingRight: 16
+        )
+        
+        textTitle.anchor(
+            top: bookTitleLine.bottomAnchor,
+            left: view.safeAreaLayoutGuide.leftAnchor,
+            right: view.safeAreaLayoutGuide.rightAnchor,
+            paddingTop: 25,
+            paddingLeft: 16,
+            paddingRight: 16
+        )
+        
+//        exampleLabel.anchor(
+//            top: textTitle.bottomAnchor,
+//            left: view.safeAreaLayoutGuide.leftAnchor,
+//            right: view.safeAreaLayoutGuide.rightAnchor,
+//            paddingTop: 10,
+//            paddingLeft: 16,
+//            paddingRight: 16
+//        )
+        
+        shadowView.anchor(
             top: textTitle.bottomAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
             paddingTop: 10,
             paddingLeft: 16,
-            paddingRight: 16
-        )
-        
-        shadowView.anchor(
-            top: exampleLabel.bottomAnchor,
-            left: view.safeAreaLayoutGuide.leftAnchor,
-            right: view.safeAreaLayoutGuide.rightAnchor,
-            paddingTop: 10,
-            paddingLeft: 16,
             paddingRight: 16,
-            height: 240
+            height: 215
         )
 
         textContent.anchor(
             left: shadowView.leftAnchor,
             right: shadowView.rightAnchor,
-            height: 240
+            height: 215
         )
 
         postBTN.anchor(
@@ -135,7 +188,7 @@ class PostingWritingViewController: UIViewController {
     }
     
     private func setupNavigationTitle() {
-        navigationItem.title = "시공 상황 작성"
+        navigationItem.title = "책 걸이 만들기"
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
@@ -160,6 +213,8 @@ class PostingWritingViewController: UIViewController {
     }
     
     @objc func tapNextBTN() {
+        postData.book = bookTitleField.text
+        postData.text = textContent.text
         self.navigationController?.popToRootViewController(animated: true)
     }
    
@@ -177,18 +232,17 @@ extension PostingWritingViewController: UITextViewDelegate {
         if (textView.text == textViewPlaceHolder) ||
             (textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)  {
             postBTN.isEnabled = false
-            postBTN.backgroundColor = .gray
+            postBTN.backgroundColor = .brown1
         } else {
             postBTN.isEnabled = true
-            postBTN.backgroundColor = .blue
+            postBTN.backgroundColor = .brown2
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             textView.text = textViewPlaceHolder
-            textView.textColor = .lightGray
-            
+            textView.textColor = .gray
         }
     }
 }
