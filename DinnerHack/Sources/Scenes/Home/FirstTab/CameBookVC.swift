@@ -17,13 +17,11 @@ class CameBookVC: UIViewController {
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
-        collectionView.isEditing = true
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.allowsFocusDuringEditing = true
-        collectionView.allowsMultipleSelection = true
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.contentInset.bottom = 60
+        collectionView.isUserInteractionEnabled = true
         return collectionView
     }()
     
@@ -38,9 +36,10 @@ class CameBookVC: UIViewController {
     let addBookVC = PostingImageViewController()
     
     var bookList: [BookModel] = [
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
+        BookModel(title: "여행의 이유", contents: "꿀잼", image: "test04"),
+        BookModel(title: "책은 도끼다", contents: "책은 도끼다.", image: "book1"),
+        BookModel(title: "낯선 사람에게 말 걸기", contents: "여자 번호 땄어요.", image: "book2"),
+        BookModel(title: "전념", contents: "전념하자", image: "book3"),
         BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
         BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
         BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg")
@@ -108,6 +107,14 @@ extension CameBookVC: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return imageListLineSpacing
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        print("asdf")
+        vc.bookdata = bookList[indexPath.row]
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion:nil)
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -121,4 +128,5 @@ extension CameBookVC : UICollectionViewDataSource {
         bookCell.dataBind(model: bookList[indexPath.row])
         return bookCell
     }
+
 }

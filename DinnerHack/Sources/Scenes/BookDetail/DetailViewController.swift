@@ -9,6 +9,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    var bookdata = BookModel(title: "1", contents: "2", image: "pinImage")
+    
     private var textViewPlaceHolder = "이 책 베리 굿"
     
     private let pinImage: UIImageView = {
@@ -18,15 +20,15 @@ class DetailViewController: UIViewController {
         return $0
     }(UIImageView())
     
-    private let bookImage: UIImageView = {
-        $0.image = UIImage(named: "test04")
+    private lazy var bookImage: UIImageView = {
+        $0.image = UIImage(named:bookdata.image)
         $0.contentMode = .scaleAspectFit
         $0.isUserInteractionEnabled = true
         return $0
     }(UIImageView())
     
-    private var bookTitle: UILabel = {
-        $0.text = "여행의 이유 (김영하)"
+    private lazy var bookTitle: UILabel = {
+        $0.text = bookdata.title
         $0.textAlignment = .center
         $0.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         $0.textColor = .black
@@ -44,7 +46,7 @@ class DetailViewController: UIViewController {
         linestyle.lineSpacing = 4.0
         $0.typingAttributes = [.paragraphStyle: linestyle]
         $0.backgroundColor = .brown1
-        $0.text = textViewPlaceHolder
+        $0.text = bookdata.contents
         $0.textColor = .black
         $0.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         $0.textAlignment = .natural
