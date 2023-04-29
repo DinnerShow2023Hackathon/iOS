@@ -188,7 +188,7 @@ class PostingWritingViewController: UIViewController {
     }
     
     private func setupNavigationTitle() {
-        navigationItem.title = "시공 상황 작성"
+        navigationItem.title = "책 걸이 만들기"
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
