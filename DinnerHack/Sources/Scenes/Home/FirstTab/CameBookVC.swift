@@ -53,7 +53,24 @@ class CameBookVC: UIViewController {
         setLayout()
         registerCVC()
         pressBtn()
-        print(CameBookVC.bookList)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.didDismissDetailNotification(_:)),
+            name: NSNotification.Name("DismissModalView"),
+            object: nil
+        )
+    }
+    
+    // MARK: - Functions
+    @objc func didDismissDetailNotification(_ notification: Notification) {
+        DispatchQueue.main.async { [self] in
+            
+            /// modalVC가 dismiss될때 컬렉션뷰를 리로드해줍니다.
+            print(CameBookVC.bookList)
+            bookListCV.reloadData()
+            print("reload 성공!")
+        }
     }
     
     private func registerCVC() {
