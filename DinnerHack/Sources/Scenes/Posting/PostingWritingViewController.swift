@@ -109,6 +109,11 @@ class PostingWritingViewController: UIViewController {
         setPress()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: NSNotification.Name("DismissModalView"), object: nil, userInfo: nil)
+    }
+    
     private func attribute() {
         view.backgroundColor = .bg
         setupNavigationTitle()
@@ -230,6 +235,8 @@ class PostingWritingViewController: UIViewController {
 //        self.navigationController?.popToRootViewController(animated: true)
         CameBookVC.bookList.append(BookModel(title: bookTitleField.text!, contents: textContent.text, image: "\(postData.path!)"))
         print(CameBookVC.bookList)
+        
+        NotificationCenter.default.post(name: NSNotification.Name("DismissModalView"), object: nil, userInfo: nil)
        
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
