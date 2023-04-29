@@ -94,7 +94,6 @@
 		4344399129FCD2DE002F292F /* DinnerHack */ = {
 			isa = PBXGroup;
 			children = (
-				85F2CA3729FD4FF90054E932 /* Global */,
 				85F2CA1129FCEF480054E932 /* Extension */,
 				4344399229FCD2DE002F292F /* AppDelegate.swift */,
 				4344399429FCD2DE002F292F /* SceneDelegate.swift */,
@@ -136,13 +135,6 @@
 				85F2CA1F29FCEF480054E932 /* Adjusted+.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		85F2CA3729FD4FF90054E932 /* Global */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
