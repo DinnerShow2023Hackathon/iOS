@@ -65,12 +65,24 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .bg
+        pressBtn()
+        
+        self.view.addSubview(closeBtn)
+        closeBtn.anchor(
+            top: view.safeAreaLayoutGuide.topAnchor,
+            right: view.safeAreaLayoutGuide.rightAnchor,
+            paddingTop: 20,
+            paddingRight: 20,
+            width: 24,
+            height: 24
+        )
         
         self.view.addSubview(pinImage)
         pinImage.anchor(
             top: view.safeAreaLayoutGuide.topAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
+            paddingTop: 50,
             paddingLeft: 10,
             paddingRight: 10,
             height: 400
@@ -119,6 +131,12 @@ class DetailViewController: UIViewController {
             height: 215
         )
         
+    }
+    
+    private func pressBtn(){
+        closeBtn.press {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @objc func touchToPickPhoto() {

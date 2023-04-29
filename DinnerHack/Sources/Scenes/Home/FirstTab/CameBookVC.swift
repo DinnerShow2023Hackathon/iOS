@@ -43,6 +43,7 @@ class CameBookVC: UIViewController {
     
     let addBookVC = PostingImageViewController()
     
+    
     // MARK: - Constants
     final let imageListLineSpacing: CGFloat = 32
     
@@ -52,6 +53,7 @@ class CameBookVC: UIViewController {
         setLayout()
         registerCVC()
         pressBtn()
+        print(CameBookVC.bookList)
     }
     
     private func registerCVC() {
@@ -107,10 +109,10 @@ extension CameBookVC: UICollectionViewDelegateFlowLayout{
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = DetailViewController()
-        vc.bookdata = CameBookVC.bookList[indexPath.row]
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion:nil)
+        let detailBookVC = DetailViewController()
+        detailBookVC.bookdata = CameBookVC.bookList[indexPath.row]
+        detailBookVC.modalPresentationStyle = .overFullScreen
+        present(detailBookVC, animated: true, completion:nil)
     }
 }
 

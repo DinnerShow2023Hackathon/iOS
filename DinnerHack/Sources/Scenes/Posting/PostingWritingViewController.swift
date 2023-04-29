@@ -10,7 +10,7 @@ import SnapKit
 import PhotosUI
 
 class PostingWritingViewController: UIViewController {
-    
+
     var postData: CellItem = CellItem()
     private var textViewPlaceHolder = "1. 이 책이 나에게 어떤 의미인지 \n2. 이 쪽을 선택한 이유 \n등 자유롭게 작성해주세요 :)"
     
@@ -19,14 +19,14 @@ class PostingWritingViewController: UIViewController {
     private var bookTitle: UILabel = {
         $0.text = "책 제목"
         $0.textAlignment = .left
-        $0.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        $0.font = UIFont(name: "KimjungchulMyungjo-Bold", size: 20.0)
         $0.textColor = .black
         return $0
     }(UILabel())
     
     private lazy var bookTitleField: UITextField = {
         $0.placeholder = " ex) 여행의 이유 (김영하)"
-        $0.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        $0.font = UIFont(name: "KimjungchulMyungjo-Regular", size: 16.0)
 //        $0.addTarget(self, action: #selector(buttonAttributeChanged), for: .editingChanged)
         return $0
     }(UITextField())
@@ -40,7 +40,7 @@ class PostingWritingViewController: UIViewController {
     private var textTitle: UILabel = {
         $0.text = "다음 책 주인이 될 분을 위한 한 마디"
         $0.textAlignment = .left
-        $0.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        $0.font = UIFont(name: "KimjungchulMyungjo-Regular", size: 20.0)
         $0.textColor = .black
         return $0
     }(UILabel())
@@ -67,7 +67,7 @@ class PostingWritingViewController: UIViewController {
         $0.backgroundColor = .brown1
         $0.text = textViewPlaceHolder
         $0.textColor = .gray
-        $0.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        $0.font = UIFont(name: "KimjungchulMyungjo-Regular", size: 16.0)
         $0.textAlignment = .natural
         $0.textContainerInset = UIEdgeInsets(top: 17, left: 12, bottom: 17, right: 12)
         $0.layer.masksToBounds = true
@@ -106,6 +106,7 @@ class PostingWritingViewController: UIViewController {
         attribute()
         layout()
         setupNotificationCenter()
+        setPress()
     }
     
     private func attribute() {
@@ -113,32 +114,47 @@ class PostingWritingViewController: UIViewController {
         setupNavigationTitle()
     }
     
+    private func setPress(){
+        closeBtn.press {
+            self.dismiss(animated: true)
+        }
+    }
+    
     private func layout() {
         
-        self.view.addSubviews([bookTitle, bookTitleField, bookTitleLine, textTitle, shadowView, postBTN])
+        self.view.addSubviews([closeBtn, bookTitle, bookTitleField, bookTitleLine, textTitle, shadowView, postBTN])
         self.shadowView.addSubview(textContent)
         
-        bookTitle.snp.makeConstraints{
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(20)
-            $0.leading.equalToSuperview().offset(20)
-        }
+        closeBtn.anchor(
+            top: view.safeAreaLayoutGuide.topAnchor,
+            right: view.safeAreaLayoutGuide.rightAnchor,
+            paddingTop: 20,
+            paddingRight: 20
+        )
+        
+        bookTitle.anchor(
+            top: closeBtn.bottomAnchor,
+            left: view.safeAreaLayoutGuide.leftAnchor,
+            paddingTop: 20,
+            paddingLeft: 20
+        )
         
         bookTitleField.anchor(
             top: bookTitle.bottomAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
-            paddingTop: 8,
-            paddingLeft: 16,
-            paddingRight: 16
+            paddingTop: 12,
+            paddingLeft: 20,
+            paddingRight: 20
         )
         
         bookTitleLine.anchor(
             top: bookTitle.bottomAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
-            paddingTop: 30,
-            paddingLeft: 16,
-            paddingRight: 16
+            paddingTop: 40,
+            paddingLeft: 20,
+            paddingRight: 20
         )
         
         textTitle.anchor(
@@ -146,8 +162,8 @@ class PostingWritingViewController: UIViewController {
             left: view.safeAreaLayoutGuide.leftAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
             paddingTop: 25,
-            paddingLeft: 16,
-            paddingRight: 16
+            paddingLeft: 20,
+            paddingRight: 20
         )
         
 //        exampleLabel.anchor(
@@ -164,8 +180,8 @@ class PostingWritingViewController: UIViewController {
             left: view.safeAreaLayoutGuide.leftAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
             paddingTop: 10,
-            paddingLeft: 16,
-            paddingRight: 16,
+            paddingLeft: 20,
+            paddingRight: 20,
             height: 215
         )
 
@@ -213,6 +229,7 @@ class PostingWritingViewController: UIViewController {
         postData.text = textContent.text
 //        self.navigationController?.popToRootViewController(animated: true)
         CameBookVC.bookList.append(BookModel(title: bookTitleField.text!, contents: textContent.text, image: "\(postData.path!)"))
+        print(CameBookVC.bookList)
        
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
