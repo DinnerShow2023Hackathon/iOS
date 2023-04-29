@@ -13,6 +13,7 @@
 		4344399A29FCD2DE002F292F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399829FCD2DE002F292F /* Main.storyboard */; };
 		4344399C29FCD2DF002F292F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4344399B29FCD2DF002F292F /* Assets.xcassets */; };
 		4344399F29FCD2DF002F292F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399D29FCD2DF002F292F /* LaunchScreen.storyboard */; };
+		913098308F5EF4BCB9A71CE2 /* Pods_DinnerHack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCB4793F4D0C8C08650EFE9 /* Pods_DinnerHack.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		4344399B29FCD2DF002F292F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4344399E29FCD2DF002F292F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		434439A029FCD2DF002F292F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50580FFB0F33DD6F66E9AF36 /* Pods-DinnerHack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DinnerHack.debug.xcconfig"; path = "Target Support Files/Pods-DinnerHack/Pods-DinnerHack.debug.xcconfig"; sourceTree = "<group>"; };
+		DDFBF04B28E9B20B7A6034A2 /* Pods-DinnerHack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DinnerHack.release.xcconfig"; path = "Target Support Files/Pods-DinnerHack/Pods-DinnerHack.release.xcconfig"; sourceTree = "<group>"; };
+		EFCB4793F4D0C8C08650EFE9 /* Pods_DinnerHack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DinnerHack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				913098308F5EF4BCB9A71CE2 /* Pods_DinnerHack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				4344399129FCD2DE002F292F /* DinnerHack */,
 				4344399029FCD2DE002F292F /* Products */,
+				C2D71F5297E8512C3CC8032B /* Pods */,
+				73C4BD0E9971AE6BC8677848 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = DinnerHack;
 			sourceTree = "<group>";
 		};
+		73C4BD0E9971AE6BC8677848 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFCB4793F4D0C8C08650EFE9 /* Pods_DinnerHack.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2D71F5297E8512C3CC8032B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50580FFB0F33DD6F66E9AF36 /* Pods-DinnerHack.debug.xcconfig */,
+				DDFBF04B28E9B20B7A6034A2 /* Pods-DinnerHack.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 434439A329FCD2DF002F292F /* Build configuration list for PBXNativeTarget "DinnerHack" */;
 			buildPhases = (
+				B3E6B4C621A235DA5F4FBA65 /* [CP] Check Pods Manifest.lock */,
 				4344398B29FCD2DE002F292F /* Sources */,
 				4344398C29FCD2DE002F292F /* Frameworks */,
 				4344398D29FCD2DE002F292F /* Resources */,
+				F12A0AD093446E9F548BDD9B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B3E6B4C621A235DA5F4FBA65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DinnerHack-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F12A0AD093446E9F548BDD9B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DinnerHack/Pods-DinnerHack-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DinnerHack/Pods-DinnerHack-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DinnerHack/Pods-DinnerHack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4344398B29FCD2DE002F292F /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		434439A429FCD2DF002F292F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50580FFB0F33DD6F66E9AF36 /* Pods-DinnerHack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		434439A529FCD2DF002F292F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDFBF04B28E9B20B7A6034A2 /* Pods-DinnerHack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
