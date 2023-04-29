@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4344399329FCD2DE002F292F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344399229FCD2DE002F292F /* AppDelegate.swift */; };
 		4344399529FCD2DE002F292F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344399429FCD2DE002F292F /* SceneDelegate.swift */; };
-		4344399729FCD2DE002F292F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344399629FCD2DE002F292F /* ViewController.swift */; };
+		4344399729FCD2DE002F292F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344399629FCD2DE002F292F /* HomeViewController.swift */; };
 		4344399A29FCD2DE002F292F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399829FCD2DE002F292F /* Main.storyboard */; };
 		4344399C29FCD2DF002F292F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4344399B29FCD2DF002F292F /* Assets.xcassets */; };
 		4344399F29FCD2DF002F292F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399D29FCD2DF002F292F /* LaunchScreen.storyboard */; };
@@ -38,7 +38,7 @@
 		4344398F29FCD2DE002F292F /* DinnerHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinnerHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4344399229FCD2DE002F292F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4344399429FCD2DE002F292F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4344399629FCD2DE002F292F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4344399629FCD2DE002F292F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4344399929FCD2DE002F292F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4344399B29FCD2DF002F292F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4344399E29FCD2DF002F292F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,10 +94,11 @@
 		4344399129FCD2DE002F292F /* DinnerHack */ = {
 			isa = PBXGroup;
 			children = (
+				85F2CA3729FD4FF90054E932 /* Global */,
 				85F2CA1129FCEF480054E932 /* Extension */,
 				4344399229FCD2DE002F292F /* AppDelegate.swift */,
 				4344399429FCD2DE002F292F /* SceneDelegate.swift */,
-				4344399629FCD2DE002F292F /* ViewController.swift */,
+				4344399629FCD2DE002F292F /* HomeViewController.swift */,
 				437190AD29FD42D300C75649 /* Posting */,
 				4344399829FCD2DE002F292F /* Main.storyboard */,
 				4344399B29FCD2DF002F292F /* Assets.xcassets */,
@@ -135,6 +136,13 @@
 				85F2CA1F29FCEF480054E932 /* Adjusted+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		85F2CA3729FD4FF90054E932 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +228,7 @@
 			files = (
 				85F2CA2129FCEF480054E932 /* NSObject+.swift in Sources */,
 				85F2CA2C29FCEF480054E932 /* UIColor+.swift in Sources */,
-				4344399729FCD2DE002F292F /* ViewController.swift in Sources */,
+				4344399729FCD2DE002F292F /* HomeViewController.swift in Sources */,
 				85F2CA2429FCEF480054E932 /* String+.swift in Sources */,
 				43FF916B29FD38C300FD9915 /* HideKeyboard+.swift in Sources */,
 				437190B429FD42E200C75649 /* PostingImageViewController.swift in Sources */,
