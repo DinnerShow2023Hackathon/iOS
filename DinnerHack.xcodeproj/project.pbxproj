@@ -19,6 +19,11 @@
 		437190B729FD6E6800C75649 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437190B629FD6E6800C75649 /* DetailViewController.swift */; };
 		43FF916B29FD38C300FD9915 /* HideKeyboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF916929FD38C200FD9915 /* HideKeyboard+.swift */; };
 		43FF916C29FD38C300FD9915 /* AutoLayout+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF916A29FD38C300FD9915 /* AutoLayout+.swift */; };
+		85BE85BE29FDB35F00A38457 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BE85BD29FDB35F00A38457 /* Encodable+.swift */; };
+		85BE85C229FDB37A00A38457 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BE85C129FDB37900A38457 /* NetworkLoggerPlugin.swift */; };
+		85BE85C429FDB39100A38457 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BE85C329FDB39100A38457 /* UserRouter.swift */; };
+		85BE85C629FDB3A900A38457 /* BookRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BE85C529FDB3A900A38457 /* BookRequestDto.swift */; };
+		85BE85C829FDB3B600A38457 /* BookResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BE85C729FDB3B600A38457 /* BookResponseDto.swift */; };
 		85F2CA2029FCEF480054E932 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1229FCEF480054E932 /* CALayer+.swift */; };
 		85F2CA2129FCEF480054E932 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1329FCEF480054E932 /* NSObject+.swift */; };
 		85F2CA2229FCEF480054E932 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1429FCEF480054E932 /* UIFont+.swift */; };
@@ -63,6 +68,11 @@
 		437190B629FD6E6800C75649 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		43FF916929FD38C200FD9915 /* HideKeyboard+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HideKeyboard+.swift"; sourceTree = "<group>"; };
 		43FF916A29FD38C300FD9915 /* AutoLayout+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AutoLayout+.swift"; sourceTree = "<group>"; };
+		85BE85BD29FDB35F00A38457 /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
+		85BE85C129FDB37900A38457 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
+		85BE85C329FDB39100A38457 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+		85BE85C529FDB3A900A38457 /* BookRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRequestDto.swift; sourceTree = "<group>"; };
+		85BE85C729FDB3B600A38457 /* BookResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookResponseDto.swift; sourceTree = "<group>"; };
 		85F2CA1229FCEF480054E932 /* CALayer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		85F2CA1329FCEF480054E932 /* NSObject+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		85F2CA1429FCEF480054E932 /* UIFont+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -216,7 +226,12 @@
 		85F2CA5C29FD85CC0054E932 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				85BE85C129FDB37900A38457 /* NetworkLoggerPlugin.swift */,
 				85F2CA6229FD95E00054E932 /* Environment.swift */,
+				85BE85BD29FDB35F00A38457 /* Encodable+.swift */,
+				85BE85C329FDB39100A38457 /* UserRouter.swift */,
+				85BE85C529FDB3A900A38457 /* BookRequestDto.swift */,
+				85BE85C729FDB3B600A38457 /* BookResponseDto.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -355,9 +370,12 @@
 				43FF916B29FD38C300FD9915 /* HideKeyboard+.swift in Sources */,
 				4361CEFA29FD7C80001ECAF1 /* PostImageView.swift in Sources */,
 				4361CEFC29FD80C5001ECAF1 /* UIBackBarButton+.swift in Sources */,
+				85BE85C429FDB39100A38457 /* UserRouter.swift in Sources */,
 				437190B429FD42E200C75649 /* PostingImageViewController.swift in Sources */,
+				85BE85C829FDB3B600A38457 /* BookResponseDto.swift in Sources */,
 				85F2CA5729FD605B0054E932 /* CameBookCVC.swift in Sources */,
 				85F2CA2329FCEF480054E932 /* UIView+.swift in Sources */,
+				85BE85C629FDB3A900A38457 /* BookRequestDto.swift in Sources */,
 				437190B729FD6E6800C75649 /* DetailViewController.swift in Sources */,
 				85F2CA2029FCEF480054E932 /* CALayer+.swift in Sources */,
 				85F2CA2B29FCEF480054E932 /* UITextField+.swift in Sources */,
@@ -371,6 +389,8 @@
 				4344399329FCD2DE002F292F /* AppDelegate.swift in Sources */,
 				85F2CA2229FCEF480054E932 /* UIFont+.swift in Sources */,
 				85F2CA5329FD603D0054E932 /* LeaveBookVC.swift in Sources */,
+				85BE85C229FDB37A00A38457 /* NetworkLoggerPlugin.swift in Sources */,
+				85BE85BE29FDB35F00A38457 /* Encodable+.swift in Sources */,
 				85F2CA2529FCEF480054E932 /* UIStackView+.swift in Sources */,
 				4344399529FCD2DE002F292F /* SceneDelegate.swift in Sources */,
 			);
@@ -524,7 +544,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DinnerHack/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -554,7 +574,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DinnerHack/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
