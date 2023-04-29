@@ -49,6 +49,10 @@ class HomeViewController: UIViewController {
         setLayout()
         setSegmentedControl()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        cameBookVC.bookListCV.reloadData()
+    }
 }
 
 extension HomeViewController{

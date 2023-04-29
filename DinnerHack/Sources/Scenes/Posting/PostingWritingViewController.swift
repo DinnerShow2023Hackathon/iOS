@@ -216,8 +216,11 @@ class PostingWritingViewController: UIViewController {
         postData.book = bookTitleField.text
         postData.text = textContent.text
 //        self.navigationController?.popToRootViewController(animated: true)
+        CameBookVC.bookList.append(BookModel(title: bookTitleField.text!, contents: textContent.text, image: "\(postData.path!)"))
+       
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
    
 }
 
