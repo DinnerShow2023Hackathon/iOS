@@ -120,18 +120,12 @@
 		4344399129FCD2DE002F292F /* DinnerHack */ = {
 			isa = PBXGroup;
 			children = (
-				85F2CA3D29FD5DDA0054E932 /* Global */,
-				85F2CA1129FCEF480054E932 /* Extension */,
-				85F2CA4B29FD5F8C0054E932 /* Home */,
-				4344399229FCD2DE002F292F /* AppDelegate.swift */,
-				4344399429FCD2DE002F292F /* SceneDelegate.swift */,
-				4361CEF929FD7C80001ECAF1 /* PostImageView.swift */,
-				437190B629FD6E6800C75649 /* DetailViewController.swift */,
-				437190AD29FD42D300C75649 /* Posting */,
-				4344399829FCD2DE002F292F /* Main.storyboard */,
-				4344399B29FCD2DF002F292F /* Assets.xcassets */,
-				4344399D29FCD2DF002F292F /* LaunchScreen.storyboard */,
 				434439A029FCD2DF002F292F /* Info.plist */,
+				85F2CA1129FCEF480054E932 /* Extension */,
+				85F2CA3D29FD5DDA0054E932 /* Global */,
+				85F2CA5E29FD86840054E932 /* Sources */,
+				85F2CA5D29FD85D20054E932 /* Application */,
+				85F2CA5C29FD85CC0054E932 /* Network */,
 			);
 			path = DinnerHack;
 			sourceTree = "<group>";
@@ -170,11 +164,8 @@
 		85F2CA3D29FD5DDA0054E932 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				4344399B29FCD2DF002F292F /* Assets.xcassets */,
 				85F2CA3E29FD5E020054E932 /* font */,
-				85F2CA4329FD5F0A0054E932 /* MapoFlowerIsland.ttf */,
-				85F2CA4529FD5F110054E932 /* MapoPeacefull.ttf */,
-				85F2CA4729FD5F1C0054E932 /* KimjungchulMyungjo-Bold.ttf */,
-				85F2CA4829FD5F1D0054E932 /* KimjungchulMyungjo-Regular.ttf */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -182,6 +173,10 @@
 		85F2CA3E29FD5E020054E932 /* font */ = {
 			isa = PBXGroup;
 			children = (
+				85F2CA4329FD5F0A0054E932 /* MapoFlowerIsland.ttf */,
+				85F2CA4529FD5F110054E932 /* MapoPeacefull.ttf */,
+				85F2CA4729FD5F1C0054E932 /* KimjungchulMyungjo-Bold.ttf */,
+				85F2CA4829FD5F1D0054E932 /* KimjungchulMyungjo-Regular.ttf */,
 			);
 			path = font;
 			sourceTree = "<group>";
@@ -192,8 +187,8 @@
 				85F2CA4E29FD60020054E932 /* FirstTab */,
 				85F2CA4F29FD600F0054E932 /* SecondTab */,
 				85F2CA4C29FD5FA90054E932 /* UnderlineSegmentedControl.swift */,
-				85F2CA5829FD63430054E932 /* BookModel.swift */,
 				85F2CA5A29FD84340054E932 /* HomeViewController.swift */,
+				85F2CA5829FD63430054E932 /* BookModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -214,6 +209,51 @@
 				85F2CA5429FD60540054E932 /* LeaveBookCVC.swift */,
 			);
 			path = SecondTab;
+			sourceTree = "<group>";
+		};
+		85F2CA5C29FD85CC0054E932 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		85F2CA5D29FD85D20054E932 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4344399229FCD2DE002F292F /* AppDelegate.swift */,
+				4344399429FCD2DE002F292F /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		85F2CA5E29FD86840054E932 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4344399829FCD2DE002F292F /* Main.storyboard */,
+				4344399D29FCD2DF002F292F /* LaunchScreen.storyboard */,
+				85F2CA5F29FD868D0054E932 /* Scenes */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		85F2CA5F29FD868D0054E932 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				437190AD29FD42D300C75649 /* Posting */,
+				85F2CA6129FD86B70054E932 /* BookDetail */,
+				85F2CA4B29FD5F8C0054E932 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		85F2CA6129FD86B70054E932 /* BookDetail */ = {
+			isa = PBXGroup;
+			children = (
+				4361CEF929FD7C80001ECAF1 /* PostImageView.swift */,
+				437190B629FD6E6800C75649 /* DetailViewController.swift */,
+			);
+			path = BookDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

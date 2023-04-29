@@ -22,8 +22,8 @@ class PostingImageViewController: UIViewController {
     private var titleText: UILabel = {
         $0.text = "인상깊었던 책 한 쪽을 올려주세요"
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        $0.textColor = .black
+        $0.font = UIFont(name: "KimjungchulMyungjo-Regular", size: 20.0)
+        $0.textColor = .brown2
         $0.numberOfLines = 0
         return $0
     }(UILabel())
@@ -63,7 +63,7 @@ class PostingImageViewController: UIViewController {
             top: view.safeAreaLayoutGuide.topAnchor,
             left: view.safeAreaLayoutGuide.leftAnchor,
             right: view.safeAreaLayoutGuide.rightAnchor,
-            paddingTop: 5,
+            paddingTop: 50,
             paddingLeft: 50,
             paddingRight: 50,
             height: 35
