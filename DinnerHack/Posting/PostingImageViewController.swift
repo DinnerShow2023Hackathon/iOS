@@ -10,10 +10,13 @@ import PhotosUI
 struct CellItem {
     var image: UIImage?
     var path: Data?
+    var text: String?
+    var book: String?
 }
 
 class PostingImageViewController: UIViewController {
     
+    private var postData : CellItem = CellItem()
     private var imageBool = false
     
     private var titleText: UILabel = {
@@ -99,11 +102,11 @@ class PostingImageViewController: UIViewController {
     
     @objc func tapNextBTN() {
         let PostingViewController = PostingWritingViewController()
+        PostingViewController.postData = postData
         navigationController?.pushViewController(PostingViewController, animated: true)
     }
     
     @objc func touchToPickPhoto() {
-        print("yes")
         uploadPhoto()
     }
     
@@ -116,6 +119,23 @@ class PostingImageViewController: UIViewController {
         picker.delegate = self
         self.present(picker, animated: true, completion: nil)
     }
+    
+    private func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        var scale = 0.0
+        var newHeight = 0.0
+
+        if newWidth < image.size.width {
+            scale = newWidth / image.size.width
+            newHeight = image.size.height * scale
+            UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
+            image.draw(in: CGRectMake(0, 0, newWidth, newHeight))
+            let newImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return newImage!
+        }
+        return image
+    }
+
 }
 
 extension PostingImageViewController: PHPickerViewControllerDelegate {
@@ -130,6 +150,8 @@ extension PostingImageViewController: PHPickerViewControllerDelegate {
                         guard let image = image as? UIImage else { return }
                         self?.nextBTN.backgroundColor = .brown2
                         self?.nextBTN.isEnabled = true
+                        self?.postData = CellItem(image: image,
+                                                  path: self!.resizeImage(image: image, newWidth: 800).jpegData(compressionQuality: 1.0))
                         self?.bookImage.image = image
                     }
                 }
