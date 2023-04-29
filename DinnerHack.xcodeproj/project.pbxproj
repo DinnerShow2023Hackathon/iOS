@@ -13,6 +13,8 @@
 		4344399A29FCD2DE002F292F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399829FCD2DE002F292F /* Main.storyboard */; };
 		4344399C29FCD2DF002F292F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4344399B29FCD2DF002F292F /* Assets.xcassets */; };
 		4344399F29FCD2DF002F292F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399D29FCD2DF002F292F /* LaunchScreen.storyboard */; };
+		437190B429FD42E200C75649 /* PostingImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437190B229FD42E200C75649 /* PostingImageViewController.swift */; };
+		437190B529FD42E200C75649 /* PostingWritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437190B329FD42E200C75649 /* PostingWritingViewController.swift */; };
 		43FF916B29FD38C300FD9915 /* HideKeyboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF916929FD38C200FD9915 /* HideKeyboard+.swift */; };
 		43FF916C29FD38C300FD9915 /* AutoLayout+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF916A29FD38C300FD9915 /* AutoLayout+.swift */; };
 		85F2CA2029FCEF480054E932 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1229FCEF480054E932 /* CALayer+.swift */; };
@@ -41,6 +43,8 @@
 		4344399B29FCD2DF002F292F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4344399E29FCD2DF002F292F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		434439A029FCD2DF002F292F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		437190B229FD42E200C75649 /* PostingImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingImageViewController.swift; sourceTree = "<group>"; };
+		437190B329FD42E200C75649 /* PostingWritingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostingWritingViewController.swift; sourceTree = "<group>"; };
 		43FF916929FD38C200FD9915 /* HideKeyboard+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HideKeyboard+.swift"; sourceTree = "<group>"; };
 		43FF916A29FD38C300FD9915 /* AutoLayout+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AutoLayout+.swift"; sourceTree = "<group>"; };
 		85F2CA1229FCEF480054E932 /* CALayer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
@@ -94,12 +98,22 @@
 				4344399229FCD2DE002F292F /* AppDelegate.swift */,
 				4344399429FCD2DE002F292F /* SceneDelegate.swift */,
 				4344399629FCD2DE002F292F /* ViewController.swift */,
+				437190AD29FD42D300C75649 /* Posting */,
 				4344399829FCD2DE002F292F /* Main.storyboard */,
 				4344399B29FCD2DF002F292F /* Assets.xcassets */,
 				4344399D29FCD2DF002F292F /* LaunchScreen.storyboard */,
 				434439A029FCD2DF002F292F /* Info.plist */,
 			);
 			path = DinnerHack;
+			sourceTree = "<group>";
+		};
+		437190AD29FD42D300C75649 /* Posting */ = {
+			isa = PBXGroup;
+			children = (
+				437190B229FD42E200C75649 /* PostingImageViewController.swift */,
+				437190B329FD42E200C75649 /* PostingWritingViewController.swift */,
+			);
+			path = Posting;
 			sourceTree = "<group>";
 		};
 		85F2CA1129FCEF480054E932 /* Extension */ = {
@@ -209,11 +223,13 @@
 				4344399729FCD2DE002F292F /* ViewController.swift in Sources */,
 				85F2CA2429FCEF480054E932 /* String+.swift in Sources */,
 				43FF916B29FD38C300FD9915 /* HideKeyboard+.swift in Sources */,
+				437190B429FD42E200C75649 /* PostingImageViewController.swift in Sources */,
 				85F2CA2329FCEF480054E932 /* UIView+.swift in Sources */,
 				85F2CA2029FCEF480054E932 /* CALayer+.swift in Sources */,
 				85F2CA2B29FCEF480054E932 /* UITextField+.swift in Sources */,
 				85F2CA2D29FCEF480054E932 /* Adjusted+.swift in Sources */,
 				43FF916C29FD38C300FD9915 /* AutoLayout+.swift in Sources */,
+				437190B529FD42E200C75649 /* PostingWritingViewController.swift in Sources */,
 				85F2CA2A29FCEF480054E932 /* UICollectionVIew+.swift in Sources */,
 				85F2CA2829FCEF480054E932 /* UILabel+.swift in Sources */,
 				85F2CA2929FCEF480054E932 /* UIButton+.swift in Sources */,
