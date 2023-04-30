@@ -66,11 +66,7 @@ class LoginVC: UIViewController {
         pressBtn()
         phoneTextField.delegate = self
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.post(name: NSNotification.Name("DismissLoginView"), object: nil, userInfo: nil)
-    }
+
 }
 
 extension LoginVC{
@@ -126,8 +122,8 @@ extension LoginVC{
     
     func pressBtn(){
         loginBtn.press {
-            CameBookVC().isLogin = true
             self.dismiss(animated: true, completion: nil)
+            NotificationCenter.default.post(name: NSNotification.Name("DismissLoginView"), object: nil, userInfo: nil)
         }
     }
 }
