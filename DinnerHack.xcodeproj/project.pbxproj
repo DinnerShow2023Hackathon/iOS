@@ -25,6 +25,7 @@
 		85BE85C429FDB39100A38457 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BE85C329FDB39100A38457 /* UserRouter.swift */; };
 		85BE85C629FDB3A900A38457 /* BookRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BE85C529FDB3A900A38457 /* BookRequestDto.swift */; };
 		85BE85C829FDB3B600A38457 /* BookResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BE85C729FDB3B600A38457 /* BookResponseDto.swift */; };
+		85BE85CA29FDC46400A38457 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BE85C929FDC46400A38457 /* LoginVC.swift */; };
 		85F2CA2029FCEF480054E932 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1229FCEF480054E932 /* CALayer+.swift */; };
 		85F2CA2129FCEF480054E932 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1329FCEF480054E932 /* NSObject+.swift */; };
 		85F2CA2229FCEF480054E932 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2CA1429FCEF480054E932 /* UIFont+.swift */; };
@@ -75,6 +76,7 @@
 		85BE85C329FDB39100A38457 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		85BE85C529FDB3A900A38457 /* BookRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRequestDto.swift; sourceTree = "<group>"; };
 		85BE85C729FDB3B600A38457 /* BookResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookResponseDto.swift; sourceTree = "<group>"; };
+		85BE85C929FDC46400A38457 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		85F2CA1229FCEF480054E932 /* CALayer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		85F2CA1329FCEF480054E932 /* NSObject+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		85F2CA1429FCEF480054E932 /* UIFont+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		85F2CA4B29FD5F8C0054E932 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				85BE85C929FDC46400A38457 /* LoginVC.swift */,
 				85F2CA4E29FD60020054E932 /* FirstTab */,
 				85F2CA4F29FD600F0054E932 /* SecondTab */,
 				85F2CA4C29FD5FA90054E932 /* UnderlineSegmentedControl.swift */,
@@ -371,6 +374,7 @@
 				85F2CA2429FCEF480054E932 /* String+.swift in Sources */,
 				85F2CA5129FD60360054E932 /* CameBookVC.swift in Sources */,
 				43FF916B29FD38C300FD9915 /* HideKeyboard+.swift in Sources */,
+				85BE85CA29FDC46400A38457 /* LoginVC.swift in Sources */,
 				4361CEFA29FD7C80001ECAF1 /* PostImageView.swift in Sources */,
 				4361CEFC29FD80C5001ECAF1 /* UIBackBarButton+.swift in Sources */,
 				85BE85C429FDB39100A38457 /* UserRouter.swift in Sources */,

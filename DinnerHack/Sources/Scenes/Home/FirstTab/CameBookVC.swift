@@ -20,6 +20,8 @@ class CameBookVC: UIViewController {
         BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: UIImage(named: "bookimg")!)
     ]
     
+    var isLogin : Bool = false
+    
     lazy var bookListCV : UICollectionView  = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -42,6 +44,7 @@ class CameBookVC: UIViewController {
     }
     
     let addBookVC = PostingImageViewController()
+    let loginVC = LoginVC()
     
     
     // MARK: - Constants
@@ -60,16 +63,32 @@ class CameBookVC: UIViewController {
             name: NSNotification.Name("DismissModalView"),
             object: nil
         )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.didDismissLoginNotification(_:)),
+            name: NSNotification.Name("DismissLoginView"),
+            object: nil
+        )
     }
     
     // MARK: - Functions
     @objc func didDismissDetailNotification(_ notification: Notification) {
         DispatchQueue.main.async { [self] in
             
-            /// modalVC가 dismiss될때 컬렉션뷰를 리로드해줍니다.
+            /// postingView가 dismiss될때 컬렉션뷰를 리로드해줍니다.
             print(CameBookVC.bookList)
             bookListCV.reloadData()
             print("reload 성공!")
+        }
+    }
+    
+    @objc func didDismissLoginNotification(_ notification: Notification) {
+        DispatchQueue.main.async { [self] in
+            
+            /// LoginView가 dismiss될때 컬렉션뷰를 리로드해줍니다.
+            isLogin = true
+            print("login 성공!")
         }
     }
     
@@ -104,13 +123,17 @@ extension CameBookVC{
     
     func pressBtn(){
         addBookBtn.press { [self] in
-            
 //            let navigationController = UINavigationController(rootViewController: PostingImageViewController())
 //            navigationController.modalPresentationStyle = .fullScreen
 //            present(navigationController, animated: true, completion: nil)
-            bookListCV.reloadData()
-            addBookVC.modalPresentationStyle = .overFullScreen
-            present(addBookVC, animated: true, completion:nil)
+            if isLogin == false {
+                loginVC.modalPresentationStyle = .overFullScreen
+                present(loginVC, animated: true, completion:nil)
+            }
+            else {
+                addBookVC.modalPresentationStyle = .overFullScreen
+                present(addBookVC, animated: true, completion:nil)
+            }
         }
     }
 }
