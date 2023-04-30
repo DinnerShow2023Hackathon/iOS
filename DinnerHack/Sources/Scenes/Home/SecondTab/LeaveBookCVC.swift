@@ -76,7 +76,7 @@ extension LeaveBookCVC{
     }
     
     func dataBind(model: BookModel) {
-        bookImage.image = UIImage(named: model.image)
+        bookImage.image = model.image
         titleLabel.text = model.title
     }
 }

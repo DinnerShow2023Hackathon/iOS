@@ -11,7 +11,7 @@ import Then
 
 class DetailViewController: UIViewController {
     
-    var bookdata = BookModel(title: "노인과 바다", contents: "행복합니다?", image: "book1")
+    var bookdata = BookModel(title: "노인과 바다", contents: "행복합니다?", image: UIImage(named: "book1")!)
     
     private var textViewPlaceHolder = "이 책 베리 굿"
     
@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
     }(UIImageView())
     
     private lazy var bookImage: UIImageView = {
-        $0.image = UIImage(named:bookdata.image)
+        $0.image = bookdata.image
         $0.contentMode = .scaleToFill
         $0.isUserInteractionEnabled = true
         return $0

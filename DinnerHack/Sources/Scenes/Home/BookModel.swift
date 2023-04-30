@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 struct BookModel {
     var title : String
     var contents : String
-    var image : String
+    var image : UIImage
 }

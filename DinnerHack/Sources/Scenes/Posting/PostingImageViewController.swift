@@ -36,8 +36,8 @@ class PostingImageViewController: UIViewController {
         return $0
     }(UIImageView())
     
-    private let bookImage: UIImageView = {
-        $0.image = UIImage(named: "Test04")
+    private lazy var bookImage: UIImageView = {
+        $0.image = UIImage(named: "basicimage")
         $0.contentMode = .scaleAspectFit
         $0.isUserInteractionEnabled = true
         return $0
@@ -120,10 +120,11 @@ class PostingImageViewController: UIViewController {
     }
     
     @objc func tapNextBTN() {
-        
+     
         let vc = PostingWritingViewController()
         vc.postData = postData
-        
+        postData = CellItem()
+        bookImage.image = UIImage(named: "basicimage")
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion:nil)
         

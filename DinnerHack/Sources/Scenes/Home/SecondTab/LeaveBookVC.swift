@@ -34,12 +34,11 @@ class LeaveBookVC: UIViewController {
     let addBookVC = PostingImageViewController()
     
     var bookList: [BookModel] = [
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg"),
-        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: "bookimg")
+        BookModel(title: "여행의 이유", contents: "꿀잼", image: UIImage(named: "test04")!),
+        BookModel(title: "책은 도끼다", contents: "책은 도끼다.", image: UIImage(named: "book1")!),
+        BookModel(title: "낯선 사람에게 말 걸기", contents: "여자 번호 땄어요.", image: UIImage(named: "book2")!),
+        BookModel(title: "전념", contents: "전념하자", image: UIImage(named:"book3")!),
+        BookModel(title: "노인과 바다", contents: "감동을 받았어요.", image: UIImage(named: "bookimg")!)
     ]
     
     // MARK: - Constants

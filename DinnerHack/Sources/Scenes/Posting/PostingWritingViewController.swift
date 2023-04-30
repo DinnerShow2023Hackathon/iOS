@@ -25,7 +25,7 @@ class PostingWritingViewController: UIViewController {
     }(UILabel())
     
     private lazy var bookTitleField: UITextField = {
-        $0.placeholder = " ex) 여행의 이유 (김영하)"
+        $0.placeholder = " ex) 여행의 이유"
         $0.font = UIFont(name: "KimjungchulMyungjo-Regular", size: 16.0)
 //        $0.addTarget(self, action: #selector(buttonAttributeChanged), for: .editingChanged)
         return $0
@@ -233,7 +233,8 @@ class PostingWritingViewController: UIViewController {
         postData.book = bookTitleField.text
         postData.text = textContent.text
 //        self.navigationController?.popToRootViewController(animated: true)
-        CameBookVC.bookList.append(BookModel(title: bookTitleField.text!, contents: textContent.text, image: "\(postData.path!)"))
+        
+        CameBookVC.bookList.insert(BookModel(title: bookTitleField.text!, contents: textContent.text, image: postData.image!), at: 0)
         print(CameBookVC.bookList)
         
         NotificationCenter.default.post(name: NSNotification.Name("DismissModalView"), object: nil, userInfo: nil)
