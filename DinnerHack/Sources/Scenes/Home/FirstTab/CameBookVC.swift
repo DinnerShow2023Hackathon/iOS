@@ -126,14 +126,20 @@ extension CameBookVC{
 //            let navigationController = UINavigationController(rootViewController: PostingImageViewController())
 //            navigationController.modalPresentationStyle = .fullScreen
 //            present(navigationController, animated: true, completion: nil)
-            if isLogin == false {
-                loginVC.modalPresentationStyle = .overFullScreen
-                present(loginVC, animated: true, completion:nil)
-            }
-            else {
+//            if isLogin == false {
+//                loginVC.modalPresentationStyle = .overFullScreen
+//                present(loginVC, animated: true, completion:nil)
+//            }
+//            else {
+//                addBookVC.modalPresentationStyle = .overFullScreen
+//                present(addBookVC, animated: true, completion:nil)
+//            }
+            
+      
+    
                 addBookVC.modalPresentationStyle = .overFullScreen
                 present(addBookVC, animated: true, completion:nil)
-            }
+            
         }
     }
 }

@@ -114,8 +114,8 @@ class DetailViewController: UIViewController {
         }
         
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchToPickPhoto))
-        bookImage.addGestureRecognizer(tapGesture)
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchToPickPhoto))
+//        bookImage.addGestureRecognizer(tapGesture)
         
         view.addSubviews([userId, userMessage])
         
