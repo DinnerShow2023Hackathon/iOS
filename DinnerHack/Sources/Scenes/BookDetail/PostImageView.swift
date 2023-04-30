@@ -2,15 +2,9 @@ import UIKit
 
 import SnapKit
 
-protocol PostImageViewControllerDelegate: AnyObject {
-    func popToPostViewController()
-}
-
 class PostImageView: UIViewController {
     
     // MARK: - View
-    
-    weak var delegate: PostImageViewControllerDelegate?
     
     private lazy var scrollView: UIScrollView = {
         $0.frame = self.view.frame
@@ -32,26 +26,37 @@ class PostImageView: UIViewController {
         return $0
     }(UIImageView())
     
+    let closeBtn = UIButton().then{
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular)
+        $0.setImage(UIImage(systemName: "xmark.circle", withConfiguration: imageConfig)?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
+    }
+    
+    private func pressBtn(){
+        closeBtn.press {
+        
+            let vc = UserGuideViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion:nil)
+        }
+    }
+    
     // MARK: - Method
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .bg
+        attribute()
+        layout()
     }
     
     private func attribute() {
         postImage.frame = scrollView.bounds
-        
-        navigationItem.leftBarButtonItem = backBarButton(#selector(didTapBackButton))
+
     }
     
     private func layout() {
         view.addSubview(scrollView)
         scrollView.addSubview(postImage)
-    }
-    
-    @objc func didTapBackButton() {
-        delegate?.popToPostViewController()
     }
 }
 
