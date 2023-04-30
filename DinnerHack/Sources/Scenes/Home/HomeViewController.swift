@@ -10,6 +10,20 @@ import Then
 import SnapKit
 
 class HomeViewController: UIViewController {
+    
+    let settingBtn = UIButton().then{
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular)
+        $0.setImage(UIImage(systemName: "gearshape", withConfiguration: imageConfig)?.withTintColor(.brown2, renderingMode: .alwaysOriginal), for: .normal)
+    }
+    
+    private func pressBtn(){
+        settingBtn.press {
+        
+            let vc = UserGuideViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion:nil)
+        }
+    }
 
     private let appLabel = UILabel().then {
         $0.text = "책거리"
@@ -48,6 +62,7 @@ class HomeViewController: UIViewController {
         view.backgroundColor = UIColor.bg
         setLayout()
         setSegmentedControl()
+        pressBtn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,6 +119,14 @@ extension HomeViewController{
             $0.trailing.equalToSuperview().offset(-16)
             $0.leading.equalToSuperview().offset(16)
         }
+        
+        view.addSubview(settingBtn)
+        settingBtn.anchor(
+            top: view.safeAreaLayoutGuide.topAnchor,
+            right: view.safeAreaLayoutGuide.rightAnchor,
+            paddingTop: 20,
+            paddingRight: 20
+        )
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431F8F7929FDEB5A008DFF3D /* UserGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431F8F7829FDEB5A008DFF3D /* UserGuideViewController.swift */; };
 		4344399329FCD2DE002F292F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344399229FCD2DE002F292F /* AppDelegate.swift */; };
 		4344399529FCD2DE002F292F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344399429FCD2DE002F292F /* SceneDelegate.swift */; };
 		4344399A29FCD2DE002F292F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4344399829FCD2DE002F292F /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		431F8F7829FDEB5A008DFF3D /* UserGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuideViewController.swift; sourceTree = "<group>"; };
 		4344398F29FCD2DE002F292F /* DinnerHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinnerHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4344399229FCD2DE002F292F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4344399429FCD2DE002F292F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				437190AD29FD42D300C75649 /* Posting */,
 				85F2CA6129FD86B70054E932 /* BookDetail */,
 				85F2CA4B29FD5F8C0054E932 /* Home */,
+				431F8F7829FDEB5A008DFF3D /* UserGuideViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				85BE85BE29FDB35F00A38457 /* Encodable+.swift in Sources */,
 				85F2CA2529FCEF480054E932 /* UIStackView+.swift in Sources */,
 				4344399529FCD2DE002F292F /* SceneDelegate.swift in Sources */,
+				431F8F7929FDEB5A008DFF3D /* UserGuideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
